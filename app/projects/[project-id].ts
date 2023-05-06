@@ -2,26 +2,33 @@ import Layout from '../layout';
 import Head from 'next/head';
 import { getProjectData, getAllProjectIds } from '../../lib/projects';
 
-export async function getStaticProps({ params }) {
+export interface projectDataModel {
+    id: string,
+    githubURL: string,
+    title: string,
+    description: string,
+}
+
+export async function getStaticProps( params: projectDataModel ) {
     const projectData = await getProjectData(params.id);
 
-    return (
+    return { 
         props: {
             projectData,
         }
-    )
+     }
 }
 
 export async function getStaticPaths() {
     const paths = getAllProjectIds();
-    return (
+    return { 
         paths,
         fallback: false, // check fallback:false
-    )
+     }
 }
 
-export default function Project({ projectData }) {
-    return (
+export default function Project(projectData: projectDataModel) {
+    return { 
         // TBD
-    )
+     }
 }
