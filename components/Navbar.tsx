@@ -1,6 +1,5 @@
-"use client"
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 interface NavLinkProps {
     label: string;
@@ -8,23 +7,26 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ label, href }) => {
-    const router = useRouter();
-    const isActive = router.pathname === href;
+    // const router = useRouter();
+    // const isActive = router.pathname === href;
 
     return (
-        <div className="block py-3">
-        <Link href={href} className={`nav__item ${
-            isActive ? "active" : ""
-        }`}>
-            {label}
-        </Link>
+        <div className="block py-3 rounded">
+            <Link href={href}
+                className="px-4 py-2 border-2 border-transparent hover:border-gray-400"
+                // className={`nav__item ${
+                //     isActive ? "active" : ""
+                //     }`}
+            >
+                {label}
+            </Link>
         </div>
     )
 }
 
 export default function Navbar() {
     return (
-        <nav className="mb-3 h-3 border-gray-400 top-0">
+        <nav className="p-2 mb-3 justify-around">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <NavLink label="home" href="./" />
                 <NavLink label="about" href="./about" />
