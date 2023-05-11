@@ -1,4 +1,4 @@
-import fs, { readdirSync } from 'fs';
+import fs, { readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
@@ -10,62 +10,56 @@ export interface PostDataModel {
     id: string,
     date: string,
     title: string,
+    contentHtml: string,
 }
 
-export function getSortedPostsData(): PostDataModel[] {
-    const filenames = fs.readdirSync(postsDir);
-    const allPostsData = filenames.map((fileName) => {
-        const id = fileName.replace(/\.md$/, '');
+export function getPostFiles() {
+    return readdirSync(postsDir);
+}
+    
+type PostField = {
+    [key: string]: any,
+}
 
-        const fullPath = path.join(postsDir, fileName);
-        const fileContent = fs.readFileSync(fullPath, 'utf-8');
+export function getPost(fileName: string, fields: []): PostField {
+    // load markdown files, extract name equal to slug, return data requested in fields
+    const slug = fileName.replace(/\.md$/, "");
+    const fullPath = path.join(postsDir, `${fileName}`);
 
-        const matterResult = matter(fileContent);
-        const {date, title, ...remainder} = matterResult.data
+    const fileContents = readFileSync(fullPath, 'utf-8');
+    const { data, content } = matter(fileContents);
 
-        return {
-            id,
-            date,
-            title,
-            ...remainder,
+    const postData: PostField = {}; // An empty object has type never ?
+    
+    fields.forEach((field) => {
+        switch(field) {
+            case "slug":
+                postData[field] = slug;
+                break;
+            case "content":
+                postData[field] = content;
+                break;
+            default:
+                if (typeof data[field] !== "undefined") {
+                    postData[field] = data[field];
+                }
         }
     });
 
-    return allPostsData.sort((a, b) => {
-        if (a.date < b.date){
-            return 1
-        } else {
-            return -1
-        }
-    });
+    return postData;
 }
 
-export function getAllPostIds() {
-    const fileNames = readdirSync(postsDir);
+export function getAllPosts(fields: []) {
+    const allSlugs = getPostFiles();
+    const allPosts = allSlugs.map((slug) => {
+        getPost(slug, fields);
+    })
+    .sort((postA, postB) => (  postA < postB ? 1 : -1 ));
 
-    return fileNames.map((fileName) => {
-        return {
-            params: {
-                id: fileName.replace(/\.md$/, ''),
-            }
-        };
-    });
+    return allPosts;
 }
 
-export async function getPostData(id: string) {
-    const fullPath = path.join(postsDir, `${id}.md`);
-    const fileContent = fs.readFileSync(fullPath, 'utf-8');
-
-    const matterResult = matter(fileContent);
-
-    const processedContent = await remark()
-        .use(html)
-        .process(matterResult.content);
-    const contentHtml = processedContent.toString();
-
-    return {
-        id,
-        contentHtml,
-        ...matterResult.data,
-    };
+export default async function markdown2Html(postMarkdown: string) {
+    const res = (await remark().use(html).process(postMarkdown)).toString();
+    return res;
 }

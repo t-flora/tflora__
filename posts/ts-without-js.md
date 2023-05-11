@@ -1,0 +1,55 @@
+---
+title: "TypeScript without JavaScript"
+date: '2023-05-07'
+---
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
+This is a mock article.
