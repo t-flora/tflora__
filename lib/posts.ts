@@ -1,8 +1,13 @@
 import fs, { readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+// import { remark } from 'remark';
+// import html from 'remark-html';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeReact from 'rehype-react';
+import { createElement } from 'react';
 
 const postsDir = path.join(process.cwd(), 'posts');
 
@@ -71,6 +76,15 @@ export function getAllPosts(): PostFields[] {
 }
 
 export default async function markdown2Html(postMarkdown: string) {
-    const res = (await remark().use(html).process(postMarkdown)).toString();
-    return res;
+    const processor = unified()
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypeReact, {
+            createElement: createElement,
+        })
+
+    const processedContent = await processor.processSync(postMarkdown).result;
+    // const res = await remark().use(html).process(postMarkdown);
+    // return res.toString();
+    return processedContent;
 }
