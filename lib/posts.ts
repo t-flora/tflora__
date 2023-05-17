@@ -8,7 +8,6 @@ const postsDir = path.join(process.cwd(), 'posts');
 
 export function getPostFiles() {
     const files = readdirSync(postsDir);
-    console.log(files); // Files are being found
     if (!files) {
         throw new Error("No post files found.")
     }
@@ -17,6 +16,7 @@ export function getPostFiles() {
     
 export type PostFields = {
     [key: string]: any,
+    slug: string,
     content: string,
 }
 
@@ -24,6 +24,7 @@ export function getPost(fileName: string): PostFields {
     // load markdown files, extract name equal to slug, return data requested in fields
     const slug = fileName.replace(/\.md$/, "");
     const fullPath = path.join(postsDir, `${slug}.md`);
+    console.log("fullPath is: " + fullPath)
 
     const fileContents = readFileSync(fullPath, 'utf-8');
     const { data, content } = matter(fileContents);
@@ -42,22 +43,18 @@ export function getPost(fileName: string): PostFields {
     //     }
     // });
 
-    // console.log(postData);
-    // if (Object.keys(postData).length == 0) {
-    //     throw new Error("No postData collected from matter")
-    // }
-    // console.log("Date fron within postData" + postData.date);
-    // console.log("Title fron within postData" + postData.title);
-    // console.log("This is matter data: " + data);
-    // console.log(content);
+    if (Object.keys(data).length == 0) {
+        throw new Error("No postData collected from matter")
+    }
 
     return {
         ...data,
+        slug,
         content,
     };
 }
 
-console.log("Testing getPost: " + getPost("nand2tetris.md").date);
+// console.log("Testing getPost: " + getPost("nand2tetris.md").date);
 
 export function getAllPosts(): PostFields[] {
     const allFiles = getPostFiles();
@@ -65,8 +62,6 @@ export function getAllPosts(): PostFields[] {
     const allPosts = allFiles.map((filename) => {
         return getPost(filename);
     })
-    console.log("This is allPosts after mapping allFiles to getPost " + allPosts)
-    // .sort((postA, postB) => ( postA.date < postB.date ? 1 : -1 ));
 
     if (!allPosts) {
         throw new Error("allPosts is empty, null, or undefined");

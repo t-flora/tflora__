@@ -1,22 +1,47 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import '../globals.css';
 
 export default function About(){
     return (
         <div>
             <Head>
-                <title>tflora-blog</title>
+                <title>tflora-skills</title>
             </Head>
             <h1 className='pb-5 text-2xl'>Hi there.</h1>
-            <p>
-                Turns out I quite like coding. Here's the story:
-            </p><br/>
-            <p>
-                - I didn't know what I wanted to do while in college. Turns out my degree in CS was useful (!): I like coding.
-                - I travelled the world and I know how to work with international teams
-                - I read widely, not super common with engineers
-                - Fundamentally a tech optimist even if AI is scary
-            </p>
+            <section id='soft-skills'>
+                <h1>
+                    Behaviors that will save you money
+                </h1>
+                <p>
+                    Turns out I quite like coding. Here&apos;s the story:
+                </p><br/>
+            </section>
+            <section id='hard-skills'>
+                <h1>
+                    Skills that will get your requirements built in time and on budget
+                </h1>
+                <h2>
+                    Well-developed
+                </h2>
+                <ul>
+                    <li>
+                        vim
+                    </li>
+                    <li>
+                        Linux
+                    </li>
+                    <li>
+                        TypeScript, React, and Next.js
+                    </li>
+                    <li>
+                        Python
+                    </li>
+                    <li>
+                        VSCode
+                    </li>
+                </ul>
+            </section>
         </div>
     )
 }
