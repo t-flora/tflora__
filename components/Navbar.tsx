@@ -30,6 +30,7 @@ export default function Navbar() {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <NavLink label="home" href="./" />
                 <NavLink label="about" href="./about" />
+                <NavLink label="what you want here" href="./skills" />
                 <NavLink label="blog" href="./blog" />
             </div>
         </nav>
