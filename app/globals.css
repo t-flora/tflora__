@@ -30,3 +30,7 @@ body {
 h1 {
   font-size: large;
 }
+
+p {
+  @apply font-serif;
+}

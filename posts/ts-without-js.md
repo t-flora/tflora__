@@ -1,55 +1,7 @@
 ---
 title: "TypeScript without JavaScript"
 date: '2023-05-07'
+description: "JavaScript is not a necessary stepping stone."
 ---
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
-This is a mock article.
+# In progress.
+Thesis: TypeScript should be the default for beginners.

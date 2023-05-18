@@ -16,17 +16,17 @@ export default async function Post({ params }: { params: { slug: string}}) {
     const processedContent = await markdown2Html(content);
 
     return (
-        <>
+        <div>
             <Head>
                 <title>{title}</title>
             </Head>
-            <article>
-                <h1 className="text-4xl">{title}</h1>
-                <div className="text-sm">
+            <article className='mb-4'>
+                <h1 className="mb-4 text-4xl">{title}</h1>
+                <div className="mb-4 text-sm">
                     <Date dateString={date} />
                 </div>
                 {processedContent}
             </article>
-        </>
+        </div>
     );
 }
