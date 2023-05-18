@@ -2,13 +2,13 @@
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import Date from '@/components/Date';
-import { PostFields, getAllPosts, getPost } from '@/lib/posts';
+import { PostFields, getPost } from '@/lib/posts';
 import markdown2Html from '@/lib/posts';
 
-export async function getPosts( params: PostFields) {
-    const postData = await getPost(params.id);
-    return postData; 
-}
+// export async function getPosts( params: PostFields) {
+//     const postData = await getPost(params.id);
+//     return postData; 
+// }
 
 export default async function Post({ params }: { params: { slug: string}}) {
     const post = getPost(params.slug);
