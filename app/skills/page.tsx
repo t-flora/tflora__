@@ -6,7 +6,7 @@ import TOC from '@/components/TableOfContents';
 
 export default function About(){
     return (
-        <div className='space-y-4'>
+        <div className='container mx-auto px-5 space-y-4'>
             <Head>
                 <title>tflora-skills</title>
             </Head>
@@ -116,7 +116,7 @@ export default function About(){
                 <ul>
                     <ListItemIconify iconId="devicon:wasm" text="WebAssembly" />
                     <ListItemIconify iconId="mdi:language-rust" color="#fff" text="Rust" />
-                    <ListItemImage text="Embedded C" alt="C Logo" src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"/>
+                    {/* <ListItemImage text="Embedded C" alt="C Logo" src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"/> */}
                 </ul>
             </section>
         </div>

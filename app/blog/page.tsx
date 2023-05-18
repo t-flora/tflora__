@@ -17,12 +17,14 @@ export default function Blog() {
         <title>tflora-blog</title>
       </Head>
       <main className="justify-center p-4">
-        <div>
-          <h1>Hello, I&apos;m Tiago</h1><br />
-          <p>Here&apos;s some stuff I&apos;ve written. I do wonder if things change if the line length just increases. Turns out yes, yes it does</p>
+        <div className='mb-4'>
+          <h1 className='text-3xl'>Blog</h1><br />
+          <p>
+            Here&apos;s some stuff I&apos;ve written or am writing. <br/>
+          </p>
         </div>
         <div>
-          <p className='text-3xl'>Recent posts</p>
+          <p className='text-2xl'>Recent posts</p>
           <div className='gap-8'>
             {recentPosts.map((post) => {
               return ( !!post &&

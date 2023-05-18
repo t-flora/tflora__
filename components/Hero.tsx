@@ -8,7 +8,7 @@ export default function Hero() {
                     Hi, I&apos;m Tiago
                 </h1>
                 <p>
-                    I&apos;m a full-stack developer specializing in TypeScript and Next.js
+                    I am a recent CS grad in engineering – be it software, data, or aircraft sales.
                 </p>
             </div>
             <div className='flex justify-center'>

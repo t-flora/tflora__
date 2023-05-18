@@ -5,15 +5,15 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-        port: '',
-      }
-    ]
-  }
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'upload.wikimedia.org',
+  //       port: '',
+  //     }
+  //   ]
+  // }
 }
 
 // const withMDX = require('@next/mdx')({
