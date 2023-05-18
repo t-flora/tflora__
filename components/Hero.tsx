@@ -11,7 +11,7 @@ export default function Hero() {
                     I&apos;m a full-stack developer specializing in TypeScript and Next.js
                 </p>
             </div>
-            <div>
+            <div className='flex justify-center'>
                 <Image
                     className='rounded-full'
                     src='/profile-picture.webp'
