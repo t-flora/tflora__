@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Blog() {
-  const allPosts = getAllPosts(['title', 'date']);
+  const allPosts = getAllPosts();
   if (Object.keys(allPosts).length==0){
     throw new Error("No data in allPosts")
   }

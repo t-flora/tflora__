@@ -1,45 +1,11 @@
 'use client';
 import Head from 'next/head';
 import '../globals.css';
-import { Icon } from '@iconify/react';
-import { type } from 'os';
-
-type IconItem = {
-    iconId: string | string[],
-    text: string,
-    color?: string,
-}
-
-const ListItem = ( { iconId, text, color }: IconItem ) => {
-
-    const ListIcons = () => {
-        if (typeof iconId === "string") {
-            return <Icon icon={iconId} fontSize={64} color={color ?? ""} />
-        } else {
-            <ul>
-                {iconId.map((icon) => {
-                    return (
-                        <Icon icon={icon} fontSize={64} color={color ?? ""} />
-                    );
-                })}
-            </ul>
-        }
-    }
-
-    return ( 
-    <li className="flex items-center">
-    <div className="w-1/2">
-        <ListIcons />
-    </div>
-    <div className="w-1/2">
-      <span>{text}</span>
-    </div>
-  </li>
-)};
+import { ListItemIconify, ListItemImage } from '@/components/ListItems';
 
 export default function About(){
     return (
-        <div>
+        <div className='space-y-4'>
             <Head>
                 <title>tflora-skills</title>
             </Head>
@@ -67,43 +33,28 @@ export default function About(){
                     Solid
                 </h2>
                 <ul className='text-lg'>
-                    <ListItem iconId="logos:vim" text="vim" />
-                    <ListItem iconId="devicon:linux" text="Linux" />
-                    <ListItem iconId="logos:ubuntu" text="Ubuntu" />
-                    <ListItem iconId="vscode-icons:file-type-python" text="Python" />
-                    <ListItem iconId="devicon:vscode" text="VS Code" />
+                    <ListItemIconify iconId="logos:vim" text="vim" />
+                    <ListItemIconify iconId="devicon:linux" text="Linux" />
+                    <ListItemIconify iconId="logos:ubuntu" text="Ubuntu" />
+                    <ListItemIconify iconId="vscode-icons:file-type-python" text="Python" />
+                    <ListItemIconify iconId="devicon:vscode" text="VS Code" />
                 </ul>
                 <br/>
                 <h2 className='text-2xl'>
                     Under development
                 </h2>
-                <ul>
-                    <li>
-                        <Icon icon="file-icons:vhdl" color='#ffff' fontSize={64}/>
-                        HDL
-                    </li>
-                    <li>
-                        <Icon icon="simple-icons:typescript" color='#3178c6' fontSize={64}/>
-                        <Icon icon="vscode-icons:file-type-reactjs" fontSize={64}/>
-                        <Icon icon="simple-icons:nextdotjs" color="#ffff" fontSize={64}/>
-                        TypeScript, React, and Next.js
-                    </li>
-                    <li>
-                        asm
-                    </li>
-                    <li>
-                        Operating systems
-                    </li>
+                <ul className='text-lg'>
+                    <ListItemIconify iconId="file-icons:vhdl" text="HDL"/>
+                    <ListItemIconify iconId={["simple-icons:typescript", "vscode-icons:file-type-reactjs", "simple-icons:nextdotjs"]} text="TypeScript, React, and Next.js"/>
                 </ul>
                 <br/>
                 <h2 className='text-2xl'>
                     Future topics
                 </h2>
                 <ul>
-                    <li>Rust</li>
-                    <li>C</li>
-                    <li>Embedded systems</li>
-                    <li>Firmware development</li>
+                    <ListItemIconify iconId="devicon:wasm" text="WebAssembly" />
+                    <ListItemIconify iconId="mdi:language-rust" color="#fff" text="Rust" />
+                    <ListItemImage text="Embedded C" alt="C Logo" src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"/>
                 </ul>
             </section>
         </div>
