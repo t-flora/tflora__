@@ -2,7 +2,7 @@
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import Date from '@/components/Date';
-import { PostFields, getPost } from '@/lib/posts';
+import { getPost } from '@/lib/posts';
 import markdown2Html from '@/lib/posts';
 
 // export async function getPosts( params: PostFields) {

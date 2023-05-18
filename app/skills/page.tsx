@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import '../globals.css';
 import { ListItemIconify, ListItemImage } from '@/components/ListItems';
-import TOC from '@/components/TableOfContents';
+// import TOC from '@/components/TableOfContents';
 
 export default function About(){
     return (
