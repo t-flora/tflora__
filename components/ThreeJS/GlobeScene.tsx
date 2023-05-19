@@ -35,15 +35,15 @@ const World: React.FC = () => {
     const globeEl = useRef();
 
     useEffect(() => {
-      const globe = globeEl.current;
+        const globe = globeEl.current;
 
-      // Auto-rotate
-      globe.controls().autoRotate = true;
-      globe.controls().autoRotateSpeed = 2.5;
-      globe.controls().enableZoom = false;
+        // Auto-rotate
+        globe.controls().autoRotate = true;
+        globe.controls().autoRotateSpeed = 2.5;
+        globe.controls().enableZoom = false;
 
-    globe.controls().maxPolarAngle = -Math.PI / 3;
-    globe.controls().minPolarAngle = Math.PI / 2;
+        globe.controls().maxPolarAngle = 2*Math.PI / 3;
+        globe.controls().minPolarAngle = Math.PI / 3;
     }, []);
 
 //   const rotationAxes = {
