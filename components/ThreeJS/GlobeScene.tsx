@@ -5,7 +5,7 @@ import * as topojson from 'topojson-client';
 import * as THREE from 'three';
 import locations from '@/public/locations.json';
 
-const polygonsMaterial = new THREE.MeshLambertMaterial({ color: 'darkslategrey', side: THREE.DoubleSide });
+const polygonsMaterial = new THREE.MeshLambertMaterial({ color: 'darkslategrey', transparent: true, opacity: 0.9, side: THREE.DoubleSide });
 
 const World: React.FC = () => {
   const [landPolygons, setLandPolygons] = useState<any[]>([]);
@@ -16,9 +16,9 @@ const World: React.FC = () => {
         ...item,
         lat,
         lng,
-        maxR: 10,
-        propagationSpeed: 5,
-        repeatPeriod: 250
+        maxR: 8,
+        propagationSpeed: 3,
+        repeatPeriod: 1000
     }
   })
 
@@ -46,12 +46,6 @@ const World: React.FC = () => {
         globe.controls().minPolarAngle = Math.PI / 3;
     }, []);
 
-//   const rotationAxes = {
-//     x: 0,
-//     y: 0,
-//     z: 0,
-//   }
-
   return (
     <div className='flex justify-center max-w-screen-md'>
         <Globe
@@ -65,10 +59,10 @@ const World: React.FC = () => {
         showAtmosphere={false}
         ringsData={locData}
         ringColor={() => colorInterpolator}
+        ringAltitude={0.01}
         ringMaxRadius='maxR'
         ringPropagationSpeed='propagationSpeed'
         ringRepeatPeriod='repeatPeriod'
-        // objectRotation={rotationAxes}
         />
     </div>
   );
