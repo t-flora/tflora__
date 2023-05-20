@@ -1,0 +1,8 @@
+.scene {
+    height: 100px;
+    width: 100px;
+}
+
+.canvas {
+    background-color: #000;
+}
