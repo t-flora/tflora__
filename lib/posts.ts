@@ -29,24 +29,10 @@ export function getPost(fileName: string): PostFields {
     // load markdown files, extract name equal to slug, return data requested in fields
     const slug = fileName.replace(/\.md$/, "");
     const fullPath = path.join(postsDir, `${slug}.md`);
-    console.log("fullPath is: " + fullPath)
+    // console.log("fullPath is: " + fullPath)
 
     const fileContents = readFileSync(fullPath, 'utf-8');
     const { data, content } = matter(fileContents);
-
-    // const postData: PostField = {}; // An empty object has type never ?
-    
-    // fields.forEach((field) => {
-    //     if (field === "slug") {
-    //         postData[field] = slug;
-    //     }
-    //     if (field === "content") {
-    //         postData[field] = content;
-    //     }
-    //     if (typeof field !== undefined) {
-    //         postData[field] = data[field]
-    //     }
-    // });
 
     if (Object.keys(data).length == 0) {
         throw new Error("No postData collected from matter")
@@ -63,7 +49,7 @@ export function getPost(fileName: string): PostFields {
 
 export function getAllPosts(): PostFields[] {
     const allFiles = getPostFiles();
-    console.log("This is the call to getPostFiles from getAllPosts " + allFiles)
+    // console.log("This is the call to getPostFiles from getAllPosts " + allFiles)
     const allPosts = allFiles.map((filename) => {
         return getPost(filename);
     })

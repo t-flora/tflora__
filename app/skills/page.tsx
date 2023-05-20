@@ -3,12 +3,13 @@ import Head from 'next/head';
 import '../globals.css';
 import { ListItemIconify, ListItemImage } from '@/components/ListItems';
 // import TOC from '@/components/TableOfContents';
+const title = "tflora-skills" // metadata will require getting rid of the icons from Iconify so that this component can be SSR
 
 export default function About(){
     return (
         <div className='container mx-auto px-5 space-y-4'>
             <Head>
-                <title>tflora-skills</title>
+                <title>{title}</title>
             </Head>
             <h1 className='pb-5 text-3xl'>So, you want to hire a new engineer.</h1>
             <p>
