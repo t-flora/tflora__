@@ -12,37 +12,28 @@
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
     "@next/mdx": "^13.4.2",
-    "@react-three/drei": "^9.68.3",
-    "@react-three/fiber": "^8.13.0",
     "@types/node": "18.16.2",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
-    "@types/three": "^0.152.0",
     "autoprefixer": "10.4.14",
     "date-fns": "^2.30.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
-    "globe.gl": "^2.28.4",
     "gray-matter": "^4.0.3",
     "next": "13.3.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-globe.gl": "^2.24.1",
     "react-markdown": "^8.0.7",
     "rehype-react": "^7.2.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2",
     "remark-rehype": "^10.1.0",
     "tailwindcss": "3.3.2",
-    "three": "^0.152.2",
-    "topojson-client": "^3.1.0",
     "typescript": "5.0.4",
-    "unified": "^10.1.2",
-    "world-atlas": "^2.0.2"
+    "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.0",
-    "@types/topojson-client": "^3.1.1"
+    "@iconify/react": "^4.1.0"
   }
 }
