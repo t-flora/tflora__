@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <div className='grid grid-cols-2 gap-x-6'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-x-6'>
             <div>
                 <h1 className='text-2xl font-bold mb-2'>
                     Hi, I&apos;m Tiago

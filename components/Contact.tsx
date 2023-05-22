@@ -30,14 +30,14 @@ export default function Contact() {
     }
 
     return (
-        <div>
+        <div className="min-w-[500px]">
             <form onSubmit={handleSubmit}>
                 <div className="w-full flex flex-col my-4">
-                    <label className="font-bold text-gray-200" htmlFor="name">
+                    <label className="font-bold text-gray-200 py-3" htmlFor="name">
                         Name
                     </label>
                     <input
-                        className="text-gray-800"
+                        className="text-gray-800 p-2 bg-gray-50 border border-gray-100"
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -46,11 +46,11 @@ export default function Contact() {
                         maxLength={100}
                         required
                     />
-                    <label className="font-bold text-gray-200" htmlFor="email">
+                    <label className="font-bold text-gray-200 py-3" htmlFor="email">
                         Email
                     </label>
                     <input
-                        className="text-gray-800"
+                        className="text-gray-800 p-2 bg-gray-50 border border-gray-100 "
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -59,14 +59,17 @@ export default function Contact() {
                         maxLength={100}
                         required
                     />
+                    <label className="font-bold text-gray-200 py-3" htmlFor="email">
+                        Message
+                    </label>
                     <textarea
-                        className="text-gray-800"
+                        className="text-gray-800 w-full p-2 bg-gray-50 border border-gray-100 "
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Your message"
                         required
                     />
-                    <button type="submit">Submit</button>
+                    <button className="px-4 py-2 w-40 bg-gray-700 disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4 rounded-xl" type="submit">Submit</button>
                 </div>
             </form>
         </div>
