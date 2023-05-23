@@ -32,6 +32,7 @@ export default function Navbar() {
                 <NavLink label="about" href="./about" />
                 <NavLink label="what you want here" href="./skills" />
                 <NavLink label="blog" href="./blog" />
+                <NavLink label="contact" href="./contact" />
             </div>
         </nav>
     );
