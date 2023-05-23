@@ -13,7 +13,7 @@ const NavLink: React.FC<NavLinkProps> = ({ label, href }) => {
     return (
         <div className="block py-3 rounded">
             <Link href={href}
-                className="px-4 py-2 border-2 border-transparent hover:border-gray-400"
+                className="px-4 py-2 border-2 min-w-[48px] min-h-[48px] border-transparent hover:border-gray-400"
                 // className={`nav__item ${
                 //     isActive ? "active" : ""
                 //     }`}
@@ -32,7 +32,6 @@ export default function Navbar() {
                 <NavLink label="about" href="./about" />
                 <NavLink label="what you want here" href="./skills" />
                 <NavLink label="blog" href="./blog" />
-                <NavLink label="contact" href="./contact" />
             </div>
         </nav>
     );
