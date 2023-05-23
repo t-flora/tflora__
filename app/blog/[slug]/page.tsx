@@ -1,9 +1,10 @@
 // import Date from '../../components/date';
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import Date from '@/components/Date';
 import { getPost } from '@/lib/posts';
 import markdown2Html from '@/lib/posts';
+import styles from './Post.module.css';
 
 // export async function getPosts( params: PostFields) {
 //     const postData = await getPost(params.id);
@@ -16,7 +17,7 @@ export default async function Post({ params }: { params: { slug: string}}) {
     const processedContent = await markdown2Html(content);
 
     return (
-        <div>
+        <div className={styles.a}>
             <Head>
                 <title>{title}</title>
             </Head>
@@ -25,7 +26,9 @@ export default async function Post({ params }: { params: { slug: string}}) {
                 <div className="mb-4 text-sm">
                     <Date dateString={date} />
                 </div>
-                {processedContent}
+                <div className={styles.markdown}>
+                    {processedContent}
+                </div>
             </article>
         </div>
     );

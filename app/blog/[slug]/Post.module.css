@@ -1,0 +1,16 @@
+.a a {
+    @apply underline text-blue-300;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    @apply my-4;
+}
+
+.markdown p {
+    @apply my-3;
+}
