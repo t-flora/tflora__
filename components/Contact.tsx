@@ -1,31 +1,77 @@
 'use client';
 import { FormEvent, useState } from "react";
 
+type contactFieldChecklist = {
+    name: boolean,
+    email: boolean,
+    message: boolean,
+}
+
 export default function Contact() {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
+    // form validation
+    const [showButtonText, setShowButtonText] = useState("submit");
+    const [formErrors, setFormErrors] = useState({});
     
+    const handleValidation = () => {
+        // TODO: Check email address with regex validation or equivalent
+        let tempErrors: contactFieldChecklist = { name: false, email: false, message: false};
+        let isValid = true;
+    
+        if (name.length <= 0) {
+            tempErrors["name"] = true;
+            isValid = false;
+        }
+        if (email.length <= 0) {
+            tempErrors["email"] = true;
+            isValid = false;
+        }
+        if (message.length <= 0) {
+            tempErrors["message"] = true;
+            isValid = false;
+        }
+    
+        setFormErrors({ ...tempErrors });
+        console.log("errors", formErrors);
+        return isValid;
+    }
+
+    const [showSuccessMsg, setShowSuccessMsg] = useState(false);
+    const [showFailureMsg, setShowFailureMsg] = useState(false);
+
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
 
-        const res = await fetch('/api/contact-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name: name, email: email, message: message })
-        })
+        let isValidForm = handleValidation();
 
-        const {error} = await res.json()
+        if (isValidForm) {
+            setShowButtonText("sending...");
+            const res = await fetch('/api/contact-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, email: email, message: message })
+            })
+            const {error} = await res.json()
 
-        if ( !error ) {
-            setName('');
-            setEmail('');
-            setMessage('');
-        } else {
-            console.error("Error: " + error);
+            if ( !error ) {
+                setName('');
+                setEmail('');
+                setMessage('');
+                setShowFailureMsg(false);
+                setShowSuccessMsg(true);
+                setShowButtonText("submit");
+            } else {
+                console.error("Error: " + error);
+                setShowFailureMsg(true);
+                setShowSuccessMsg(false);
+                setShowButtonText("submit");
+            }
         }
     }
 
@@ -72,7 +118,23 @@ export default function Contact() {
                         placeholder="Your message"
                         required
                     />
-                    <button className="px-4 py-2 w-40 bg-gray-700 disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4 rounded-xl" type="submit">Submit</button>
+                    <button className="px-4 py-2 w-40 bg-gray-700 disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4 rounded-xl" type="submit">
+                        Submit
+                    </button>
+                </div>
+                {/* Implement messages depending on form submission success */}
+                <div className="text-left">
+                    {showSuccessMsg && 
+                        <p className="text-green-500 font-semibold text-sm my-2 text-center font-mono">
+                            Your message has been delivered.
+                        </p>
+                    }
+                    {showFailureMsg &&
+                        <p className="text-red-400 font-semibold text-sm my-2 text-center font-mono">
+                            There was an issue with your submission<br/>
+                            Please try again
+                        </p>
+                    }
                 </div>
             </form>
         </div>
