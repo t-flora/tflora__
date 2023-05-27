@@ -10,22 +10,22 @@ export default function Contact() {
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
 
-        const res = await fetch('/api/contact', {
+        const res = await fetch('/api/contact-email', {
             method: 'POST',
             headers: {
-                'Content-Type': 'applications/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name, email, message })
+            body: JSON.stringify({ name: name, email: email, message: message })
         })
 
-        const data = await res.json()
+        const {error} = await res.json()
 
-        if (data.status == 'Ok') {
+        if ( !error ) {
             setName('');
             setEmail('');
             setMessage('');
         } else {
-            console.error(data.error);
+            console.error("Error: " + error);
         }
     }
 
@@ -39,6 +39,7 @@ export default function Contact() {
                     <input
                         className="text-gray-800 p-2 bg-gray-50 border border-gray-100"
                         type="text"
+                        name="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Your name"
@@ -52,6 +53,7 @@ export default function Contact() {
                     <input
                         className="text-gray-800 p-2 bg-gray-50 border border-gray-100 "
                         type="email"
+                        name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Your email"
@@ -59,11 +61,12 @@ export default function Contact() {
                         maxLength={100}
                         required
                     />
-                    <label className="font-bold text-gray-200 py-3" htmlFor="email">
+                    <label className="font-bold text-gray-200 py-3" htmlFor="message">
                         Message
                     </label>
                     <textarea
                         className="text-gray-800 w-full p-2 bg-gray-50 border border-gray-100 "
+                        name="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Your message"
