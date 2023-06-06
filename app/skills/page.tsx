@@ -1,7 +1,7 @@
 'use client';
 import Head from 'next/head';
 import '../globals.css';
-import { ListItemIconify, ListItemImage } from '@/components/ListItems';
+import { ListItemIconify } from '@/components/ListItems';
 // import TOC from '@/components/TableOfContents';
 const title = "tflora-skills" // metadata will require getting rid of the icons from Iconify so that this component can be SSR
 
@@ -13,7 +13,7 @@ export default function About(){
             </Head>
             <h1 className='pb-5 text-3xl'>So, you want to hire a new engineer.</h1>
             <p>
-                And you want someone who can do more than write basic prompts for the latest LLM to solve mundane coding tasks.<br/>
+                I have dabbled in programming at all layers of computer science: from Hardware Description Languages to AI.<br/>
                 In this page I&apos;ll make my case to you that I can fulfill your requirements. My greatest asset, it must be warned, is my motivation to learn.
             </p>
             <div className="p-6 rounded-md">
@@ -22,22 +22,22 @@ export default function About(){
                 </h2>
                 <ul>
                     <li>
-                        <a href={`#soft-skills`} className="text-lg hover:underline">Behaviors that save time, money, and improve outcomes</a>
+                        <a href={`#soft-skills`} className="text-lg hover:underline">Behaviors I believe save time, money, and improve outcomes</a>
                         <ul className='ml-5'>
                             <li>
-                                <a href='#no-bs' className='text-md hover:underline'>No BS</a>
+                                <a href='#no-bs' className='text-md hover:underline'>Minimize BS</a>
                             </li>
                             <li>
-                                <a href='#interruptions' className='text-md hover:underline'>Interruptions are the devil</a>
+                                <a href='#interruptions' className='text-md hover:underline'>Interruptions are usually the devil</a>
                             </li>
                             <li>
-                                <a href='#tools-roi' className='text-md hover:underline'>Tools should have a clear positive ROI estimate</a>
+                                <a href='#think-econ' className='text-md hover:underline'>Think like an economist/statistician</a>
                             </li>
                             <li>
                                 <a href='#feedback' className='text-md hover:underline'>Feedback should be as open as possible</a>
                             </li>
                         </ul>
-                        <a href='#hard-skills' className='text-lg hover:underline'>Hard skills that will get your requirements built in time and on budget</a>
+                        <a href='#hard-skills' className='text-lg hover:underline'>Hard skills that will help get your requirements built in time and on budget</a>
                     </li>
                 </ul>
             </div>
@@ -68,13 +68,13 @@ export default function About(){
                         Interruptions are ruinous for people who depend on deep focus. I seek to keep collaboration time as concentrated as possible each day to leave room for the &quot;action&quot; in action items. 
                     </p>
                 </div>
-                <div id='tools-roi'>
+                <div id='think-economist'>
                     <h2 className='text-2xl'>
-                        Tooling should have at least estimates of ROI
+                        Think like an economist/statistician
                     </h2>
                     <p>
-                        This one is hard. Everyone is drawn to new, shiny, promising tools that could help your workflow. <br/>
-                        But if setup time and maintenance or running costs are higher than the tool is bringing back, it should simply be cut.
+                        Thinking about projects, tools, and everyday design decisions in terms of tradeoffs, expected values, and opportunity costs improves decision-making.<br/>
+                        Decisions are not only made by managers, but every individual contributor asking for advice or help or embarking on a new project will make many technical decisions they fully own. Being aware of these concepts is useful far beyond business school.
                     </p>
                 </div>
                 <div id='feedback'>
@@ -89,35 +89,44 @@ export default function About(){
             </section>
             <section id='hard-skills'>
                 <h1 className='text-3xl'>
-                    Hard skills that will get your requirements built in time and on budget
+                    Hard skills that will help get your requirements built in time and on budget
                 </h1>
                 <br/>
-                <h2 className='text-2xl'>
-                    Solid
+                <h2 className='text-2xl mb-3'>
+                    Stuff I have worked with for over a year
                 </h2>
-                <ul className='text-lg'>
+                <div className="flex flex-wrap -m-2 ">
                     <ListItemIconify iconId="logos:vim" text="vim" />
                     <ListItemIconify iconId="devicon:linux" text="Linux" />
                     <ListItemIconify iconId="logos:ubuntu" text="Ubuntu" />
                     <ListItemIconify iconId="vscode-icons:file-type-python" text="Python" />
                     <ListItemIconify iconId="devicon:vscode" text="VS Code" />
-                </ul>
+                </div>
                 <br/>
-                <h2 className='text-2xl'>
-                    Under development
+                <h2 className='text-2xl mb-3'>
+                    Things I&apos;ve worked with for the past year
                 </h2>
-                <ul className='text-lg'>
+                <div className="flex flex-wrap -m-2 ">
                     <ListItemIconify iconId="file-icons:vhdl" text="HDL"/>
+                    <ListItemIconify iconId="devicon:c" text="C, for anyone on a screen-reader"/>
                     <ListItemIconify iconId={["simple-icons:typescript", "vscode-icons:file-type-reactjs", "simple-icons:nextdotjs"]} text="TypeScript, React, and Next.js"/>
-                </ul>
+                </div>
                 <br/>
-                <h2 className='text-2xl'>
-                    Future topics
+                <h2 className='text-2xl mb-3'>
+                    Things I&apos;m dying to learn
                 </h2>
-                <ul>
+                <div className="flex flex-wrap -m-2 ">
                     <ListItemIconify iconId="devicon:wasm" text="WebAssembly" />
                     <ListItemIconify iconId="mdi:language-rust" color="#fff" text="Rust" />
-                    {/* <ListItemImage text="Embedded C" alt="C Logo" src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"/> */}
+                    <ListItemIconify iconId="eos-icons:hardware-circuit" color="#fff" text="FPGA" />
+                    <ListItemIconify iconId="logos:arduino" color="#fff" text="Arduino" fontSize={48}/>
+                </div>
+                <h2 className='text-2xl p-2'>
+                    Other things that don&apos;t have a good icon for them:
+                </h2>
+                <ul className='list-inside list-disc mb-3'>
+                    <li>Operating systems: very early days, but scheduling is a wonderful problem to lose hair over</li>
+                    <li>Assembly languages: only played with a <a href="https://github.com/t-flora/the_hack_computer">toy assembly language so far as part of ECS</a>, but it&apos;s great fun</li>
                 </ul>
             </section>
         </div>
