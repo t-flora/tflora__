@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 type IconItem = {
     iconId: string | string[],
-    text: string,
+    text?: string,
     color?: string,
     fontSize?: number,
 }
