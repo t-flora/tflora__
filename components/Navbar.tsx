@@ -37,7 +37,7 @@ export default function Navbar() {
             <div className="hidden md:flex max-w-screen-xl flex-wrap items-center justify-between mx-auto p-4">
                 <NavLink label="home" href="./" />
                 <NavLink label="about" href="./about" />
-                <NavLink label="what you want here" href="./skills" />
+                <NavLink label="what you're looking for" href="./skills" />
                 <NavLink label="blog" href="./blog" />
                 <NavLink label="contact" href="./contact" />
             </div>
