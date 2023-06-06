@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import Navbar from '../components/Navbar';
 import Hero from '@/components/Hero';
+import { ListItemIconify } from '@/components/ListItems';
 
 const inter = Inter({ subsets: ['latin'] })
 
