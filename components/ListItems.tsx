@@ -15,7 +15,7 @@ export const ListItemIconify: React.FC<IconItem> = ( { iconId, text, color, font
             return <Icon icon={iconId} fontSize={64} color={color ?? ""} />
         } else {
             return (
-                <div className='flex space-x-4'>
+                <div className='flex space-x-4 m-4'>
                 {iconId.map((icon, idx) => {
                     return (
                             <Icon key={idx} icon={icon} fontSize={fontSize} color={color ?? ""} />
@@ -27,8 +27,8 @@ export const ListItemIconify: React.FC<IconItem> = ( { iconId, text, color, font
         }
 
     return ( 
-    <li className="flex items-center">
-        <div className="w-1/2">
+    <li className="flex items-center w-1/2 p-2">
+        <div className="mr-2">
             <ListIcons />
         </div>
         <div className="w-1/2">
