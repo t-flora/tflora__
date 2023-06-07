@@ -6,6 +6,18 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --main-bg-color: #060c20;
+	--main-font-color: #d2d2d2;
+	--main-url-color: #3273dc;
+	--main-code-color: #101f52;
+	--accent: 124, 58, 237;
+	--fe-accent: 252, 114, 8;
+	--sh-accent: 242, 7, 160;
+	--ds-accent: 12, 232, 12;
+	--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #04ba93 50%, white 60%);
+	--fe-gradient: linear-gradient(30deg, rgb(var(--fe-accent)), #7af507 50%, white 60%);
+	--sh-gradient: linear-gradient(60deg, rgb(var(--sh-accent)), #e80c34 50%, white 60%);
+	--ds-gradient: linear-gradient(30deg, rgb(var(--ds-accent)), #2cdbb5 50%, white 60%);
 }
 
 @media (prefers-color-scheme: dark) {

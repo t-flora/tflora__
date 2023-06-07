@@ -1,0 +1,111 @@
+.abouth1 {
+    /* font-size: 2.5rem; */
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.spacer {
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('/shapes/wave-2.svg');
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    display: block;
+}	
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.header_gradient {
+		background-image: var(--accent-gradient);
+        background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 600%;
+		background-position: 0%;
+        animation: gradient 10s ease infinite;
+}
+
+.frontend-gradient {
+		background-image: var(--fe-gradient);
+        background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 600%;
+		background-position: 0%;
+}
+
+.sh-gradient {
+		background-image: var(--sh-gradient);
+        background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 600%;
+		background-position: 0%;
+}
+
+.data-science-gradient {
+		background-image: var(--ds-gradient);
+        background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 600%;
+		background-position: 0%;
+}
+
+.circular-portrait {
+    position: relative;
+    width: auto;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 60%;
+}
+
+.circular-portrait Picture {
+    width: 100%;
+    height: auto;
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+}
+
+.right-aligned {
+    text-align: right;
+}
+
+.aboutp {
+    font-size: medium;
+}
