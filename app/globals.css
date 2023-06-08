@@ -11,11 +11,11 @@
 	--main-url-color: #3273dc;
 	--main-code-color: #101f52;
 	--accent: 124, 58, 237;
-	--fe-accent: 252, 114, 8;
+	--fe-accent: 55, 245, 7;
 	--sh-accent: 242, 7, 160;
 	--ds-accent: 12, 232, 12;
 	--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #04ba93 50%, white 60%);
-	--fe-gradient: linear-gradient(30deg, rgb(var(--fe-accent)), #7af507 50%, white 60%);
+	--fe-gradient: linear-gradient(30deg, rgb(var(--fe-accent)), #07f5d9 50%, white 60%);
 	--sh-gradient: linear-gradient(60deg, rgb(var(--sh-accent)), #e80c34 50%, white 60%);
 	--ds-gradient: linear-gradient(30deg, rgb(var(--ds-accent)), #2cdbb5 50%, white 60%);
 }
@@ -26,6 +26,28 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header_gradient {
+		background-image: var(--fe-gradient);
+        background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 600%;
+		background-position: 0%;
+        animation: gradient 10s ease infinite;
 }
 
 body {

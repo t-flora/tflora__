@@ -13,9 +13,9 @@ export default function About(){
             </h3>
             <ul className='leading-loose list-disc list-inside'>
                 <li> I didn&apos;t know what I wanted to do while in college. Turns out my degree in CS was useful (!): I like coding. Yes, it took me about 4 years to realize it.</li>
-                <li> I travelled the world for college, worked with on projects ranging from transportation planning to VC research, and did it all with a diverse group of people from 50+ countries. I know how to work with international teams.</li>
-                <li> I read widely, not super common with engineers</li>
-                <li> Fundamentally a tech optimist even if AI is scary</li>
+                <li> I travelled, worked, and studied in 6 different countries. I&apos;ve worked with on projects ranging from transportation planning to VC research, and did it all with a diverse group of people from 50+ countries. I know how to work with international teams.</li>
+                <li> I read nonfiction pretty widely, but currently I&apos;m focusing on operating systems and computer architecture textbooks</li>
+                <li> Usually a tech optimist, when I&apos;m not nervously laughing on <a href='https://twitter.com/AISafetyMemes?s=20' className='underline hover:text-blue-300'>this page</a>.</li>
             </ul>
         </div>
     )

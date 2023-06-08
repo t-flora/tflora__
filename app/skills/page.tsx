@@ -11,7 +11,7 @@ export default function About(){
             <Head>
                 <title>{title}</title>
             </Head>
-            <h1 className='pb-5 text-3xl'>So, you want to hire a new engineer.</h1>
+            <h1 className='pb-5 text-3xl'><span className='header_gradient'>So</span>, you want to hire a new engineer.</h1>
             <p>
                 I have dabbled in programming at all layers of computer science: from Hardware Description Languages to AI.<br/>
                 In this page I&apos;ll make my case to you that I can fulfill your requirements. My greatest asset, it must be warned, is my motivation to learn.
