@@ -68,3 +68,7 @@ h1 {
 p {
   @apply font-serif;
 }
+
+nav {
+  position: -webkit-sticky;
+}

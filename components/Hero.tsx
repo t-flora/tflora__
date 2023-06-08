@@ -12,11 +12,11 @@ export default function Hero() {
                     <h1 className={ `header_gradient text-4xl font-bold mb-2` }>
                         Hi, I&apos;m Tiago
                     </h1>
-                    <p className='text-xl'>
+                    <p className='text-xl mb-4'>
                         I am a recent CS grad in engineering – be it software, data, or aircraft sales.
                     </p>
                 </div>
-                <div className='flex justify-center'>
+                <div className='flex justify-center mt-2 mb-4'>
                     <Image
                         className='rounded-full'
                         src='/profile-picture.webp'
