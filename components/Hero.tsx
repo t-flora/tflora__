@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import '../app/globals.css';
 // import { ListItemIconify } from '@/components/ListItems';
 
 export default function Hero() {
@@ -8,14 +9,14 @@ export default function Hero() {
         <div>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-x-6 mb-4'>
                 <div>
-                    <h1 className='text-2xl font-bold mb-2'>
+                    <h1 className={ `header_gradient text-4xl font-bold mb-2` }>
                         Hi, I&apos;m Tiago
                     </h1>
-                    <p>
+                    <p className='text-xl mb-4'>
                         I am a recent CS grad in engineering – be it software, data, or aircraft sales.
                     </p>
                 </div>
-                <div className='flex justify-center'>
+                <div className='flex justify-center mt-2 mb-4'>
                     <Image
                         className='rounded-full'
                         src='/profile-picture.webp'

@@ -1,6 +1,7 @@
 import PostPreview from '@/components/PostPreview';
 import { getAllPosts } from '@/lib/posts';
 import Head from 'next/head';
+import '../globals.css';
 
 export default function Blog() {
   const allPosts = getAllPosts();
@@ -19,7 +20,7 @@ export default function Blog() {
       </Head>
       <main className="justify-center p-4">
         <div className='mb-4'>
-          <h1 className='text-3xl'>Blog</h1><br />
+          <h1 className='header_gradient text-3xl'>Blog</h1><br />
           <p>
             Here&apos;s some stuff I&apos;ve written or am writing. <br/>
           </p>

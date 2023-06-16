@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Icon } from '@iconify/react';
+import "../app/globals.css";
 // import { useRouter } from "next/navigation";
 
 interface NavLinkProps {
@@ -28,7 +29,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="p-2 mb-3 justify-around">
+        <nav className="justify-around sticky top-0 w-full p-2 mb-3 backdrop-blur-md">
             <div className="md:hidden">
                 <button type="button" onClick={() => (setIsOpen(!isOpen))}>
                     <Icon icon="cil:hamburger-menu" fontSize={32} color="#fff" />
@@ -52,6 +53,7 @@ export default function Navbar() {
                     <NavLink label="about" href="./about" />
                     <NavLink label="what you want here" href="./skills" />
                     <NavLink label="blog" href="./blog" />
+                    <NavLink label="contact" href="./contact" />
                 </div>
             </div>
             )}
