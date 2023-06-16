@@ -1,7 +1,5 @@
-// import Date from '../../components/date';
-// import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
-import DateComponent from '@/components/Date';
+import DateComponent from '@/components/DateComponent';
 import { getPost } from '@/lib/posts';
 import markdown2Html from '@/lib/posts';
 import styles from './Post.module.css';

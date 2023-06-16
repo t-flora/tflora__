@@ -1,6 +1,6 @@
 import { PostFields } from '../lib/posts';
 import Link from 'next/link';
-import DateComponent from './Date';
+import DateComponent from './DateComponent';
 
 export default function PostPreview({ post }: {post: PostFields}) {
     return (
