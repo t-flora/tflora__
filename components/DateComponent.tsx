@@ -5,7 +5,7 @@ interface DateString {
     dateString: string,
 }
 
-export default function Date({ dateString }: DateString): JSX.Element {
+export default function DateComponent({ dateString }: DateString): JSX.Element {
     const date = parseISO(dateString);
     return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
 }

@@ -1,4 +1,3 @@
-import Date from '@/components/Date';
 import PostPreview from '@/components/PostPreview';
 import { getAllPosts } from '@/lib/posts';
 import Head from 'next/head';
@@ -9,7 +8,10 @@ export default function Blog() {
   if (Object.keys(allPosts).length==0){
     throw new Error("No data in allPosts")
   }
-  const recentPosts = allPosts.slice(0, 2);
+  const recentPosts = allPosts.map((p) => {
+    const date = new Date(p.date);
+    return {...p, dateString: date}
+  }).sort((a, b) => b.dateString?.getTime() - a.dateString?.getTime());
 
   return (
     <div className='container mx-auto px-5'>
@@ -27,11 +29,14 @@ export default function Blog() {
           <p className='text-2xl'>Recent posts</p>
           <div className='gap-8'>
             {recentPosts.map((post) => {
-              return ( !!post &&
+              return ( !!post && !post.hidden &&
               <div key={post.title}>
                 <PostPreview post={post} />
               </div>
             )})}
+{/* const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+); */}
           </div>
         </div>
       </main>

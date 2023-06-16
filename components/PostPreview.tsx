@@ -1,6 +1,6 @@
 import { PostFields } from '../lib/posts';
 import Link from 'next/link';
-import Date from './Date';
+import DateComponent from './DateComponent';
 
 export default function PostPreview({ post }: {post: PostFields}) {
     return (
@@ -10,7 +10,7 @@ export default function PostPreview({ post }: {post: PostFields}) {
                     <p className='font-semibold text-xl group-hover:underline'>
                         {post.title}
                     </p>
-                    <Date dateString={post.date}/>
+                    <DateComponent dateString={post.date}/>
                 </div>
             </Link>
         </div>

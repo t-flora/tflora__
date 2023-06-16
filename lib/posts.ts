@@ -23,6 +23,8 @@ export type PostFields = {
     [key: string]: any,
     slug: string,
     content: string,
+    title?: string,
+    hidden?: boolean,
 }
 
 export function getPost(fileName: string): PostFields {
