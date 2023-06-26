@@ -2,8 +2,8 @@
 title: "Making an n-trino-based game with Next.js"
 date: '2023-06-20'
 description: "What if tetriminos could be triminos, pentiminos, heximinos..."
-hidden: true
-tags: ["projects", "architecture"]
+hidden: false
+tags: ["projects", "architecture", "Multris series"]
 ---
 ## Wait, has't this been done?
 If I let myself visit [tetris.com](https://tetris.com/), I will do so conscious that at least half an hour will magically vanish.
