@@ -1,7 +1,8 @@
 import fs, { readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-// import { remark } from 'remark';
+import { remark } from 'remark';
+import remarkMdx from 'remark-mdx';
 // import html from 'remark-html';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -29,9 +30,18 @@ export type PostFields = {
 
 export function getPost(fileName: string): PostFields {
     // load markdown files, extract name equal to slug, return data requested in fields
-    const slug = fileName.replace(/\.md$/, "");
-    const fullPath = path.join(postsDir, `${slug}.md`);
-    // console.log("fullPath is: " + fullPath)
+    const slug = fileName.replace(/\.mdx?$/, "");
+    const mdFullPath = path.join(postsDir, `${slug}.md`);
+    const mdxFullPath = path.join(postsDir, `${slug}.mdx`);
+
+    let fullPath;
+    if (fs.existsSync(mdFullPath)) {
+        fullPath = mdFullPath;
+    } else if (fs.existsSync(mdxFullPath)) {
+        fullPath = mdxFullPath;
+    } else {
+        throw new Error("No .md or .mdx file found.")
+    }
 
     const fileContents = readFileSync(fullPath, 'utf-8');
     const { data, content } = matter(fileContents);
@@ -67,6 +77,7 @@ export default async function markdown2Html(postMarkdown: string) {
     const processor = unified()
         .use(remarkParse)
         .use(remarkRehype)
+        .use(remarkMdx)
         .use(rehypeReact, {
             createElement: createElement,
         })
