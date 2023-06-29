@@ -1,0 +1,21 @@
+---
+title: "Making a game board with React"
+date: '2023-06-22'
+description: "Rows and rows the matrix goes"
+hidden: false
+tags: ["projects", "frontend", "Multris series", "react"]
+---
+
+## Displaying a basic grid
+The most straightforward way to create and display a game grid is to:
+1. Specify its size: define a number of columns and rows. A regular Tetris board is 10 x 20, and that should suffice for now. Depending on how many "multiminos" we end up having in any given piece, we might want larger boards.
+2. Create a Cell component: a simple `div` containing a marker of cell content (being either part of a block or an empty cell) should be the most basic unit of the board. It can be styled to be a square with color to be defined by the cell content.
+3. Define a board component: aggregate Cell components into a matrix (an array of arrays) and display them together.
+
+This should be enough to get us a basic board.
+
+```ts
+export default function Cell({ type }: CellProps) {
+    return <div className={styles.cell[type]} />;
+}
+```

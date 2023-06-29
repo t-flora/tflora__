@@ -1,16 +1,14 @@
 import fs, { readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
 import remarkMdx from 'remark-mdx';
-// import html from 'remark-html';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeReact from 'rehype-react';
 import { createElement } from 'react';
 
-const postsDir = path.join(process.cwd(), 'posts');
+const postsDir = path.join(process.cwd(), 'app/posts');
 
 export function getPostFiles() {
     const files = readdirSync(postsDir);
@@ -56,8 +54,6 @@ export function getPost(fileName: string): PostFields {
         content,
     };
 }
-
-// console.log("Testing getPost: " + getPost("nand2tetris.md").date);
 
 export function getAllPosts(): PostFields[] {
     const allFiles = getPostFiles();
